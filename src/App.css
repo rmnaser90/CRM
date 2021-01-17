@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+body {
+    margin: 0px;
+    width: 100%;
+    min-width: 100vh;
+}
+.mainContainer{
+    background-color:#83c5be;  
+    min-height: 100vh;  
+}
+.MuiOutlinedInput-root{
+background-color:rgba(241, 250, 238, 0.8) ;
+}
+.MuiNativeSelect-select{
+background-color:rgba(241, 250, 238, 0.8) ;
+
+}
+.dataGrid{
+    background-color:rgba(241, 250, 238, 0.8)
+    ;
+}
+.appBar{
+    background-color: #006d77;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.updateMenu {
+    position: fixed;
+    top: 20vh;
+    right: 30vw;
+    width: 40vw;
+    padding: 20px;
+    background-color: #006d77;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.inputs {
+    margin: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.updateMenuContainer {
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+.actions{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+    justify-items: center;
+}
+.actionsUpdate {
+    width: 90%;
+
+    min-width: 280px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    margin-bottom: 40px;
+}
+.newClient{
+    width: 90%;
+    min-width: 280px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.tableContainer {
+    margin-left: auto;
+    margin-right: auto;
+    height: 80vh;
+    width: 100%;
+    max-width: 1250px;
+    text-align: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.clientInfo{
+    margin-top: 30px;
+    width: 100%;
+   display: grid;
+   grid-template-columns: 1fr;
+   align-items: center;
+   grid-gap: 20px;
+}
+.sendEmail{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.badge{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-items: start;
+    grid-column-gap: 20px;
+}
+.badgeContainer{
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-column-gap: 30px;
+}
+.badgeImg{
+    width: 100%;
+}
+.badgeTitles{
+    display: grid;
+    height: 70%;
+    grid-template-rows: 2fr 1fr;
+    align-items: center;
+}
+.chartsContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    row-gap: 40px;
+}
+.chartContainer{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+.recharts-legend-item-text{
+    font-size: 120%;
 }

@@ -1,25 +1,16 @@
-import logo from './logo.svg';
+import React from 'react'
+import { inject, observer } from 'mobx-react'
 import './App.css';
+import NavBar from './component/NavBar';
 
-function App() {
+const App = inject("clientsStore")(observer(function ({ clientsStore }) {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="mainContainer">
+      <NavBar />
+      
     </div>
-  );
-}
+  )
+}))
 
-export default App;
+export default App

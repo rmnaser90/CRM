@@ -1,0 +1,123 @@
+USE crm_db;
+-- CREATE TABLE employee (
+--     id INT NOT NULL AUTO_INCREMENT,
+--     employeeFirstName VARCHAR(30),
+--     employeeSurName VARCHAR(30),
+--     PRIMARY KEY (id)
+-- );
+-- CREATE TABLE country (
+--     id INT NOT NULL AUTO_INCREMENT,
+--     countryName VARCHAR(30),
+--     PRIMARY KEY (id)
+-- );
+-- CREATE TABLE client (
+--     id INT NOT NULL AUTO_INCREMENT,
+--     firstName VARCHAR(30),
+--     surName VARCHAR(30),
+--     email VARCHAR(100),
+--     firsContactDate INT,
+--     countryId INT,
+--     employeeId INT,
+--     sold BOOLEAN DEFAULT 0,
+--     PRIMARY KEY (id),
+--     FOREIGN KEY(employeeId) REFERENCES employee(id),
+--     FOREIGN KEY(countryId) REFERENCES country(id)
+-- );
+-- CREATE TABLE sales (
+--     id INT NOT NULL AUTO_INCREMENT,
+--     clientId INT,
+--     employeeId INT,
+--     date INT,
+--     PRIMARY KEY (id),
+--     FOREIGN KEY(employeeId) REFERENCES employee(id),
+--     FOREIGN KEY(clientId) REFERENCES client(id)
+-- );
+-- CREATE TABLE emails (
+--     id INT NOT NULL AUTO_INCREMENT,
+--     clientId INT,
+--     employeeId INT,
+--     type CHAR(10),
+--     date INT,
+--     PRIMARY KEY (id),
+--     FOREIGN KEY(employeeId) REFERENCES employee(id),
+--     FOREIGN KEY(clientId) REFERENCES client(id)
+-- );
+-- ALTER TABLE sales
+-- MODIFY COLUMN date DOUBLE;
+-- ALTER TABLE emails
+-- MODIFY COLUMN date DOUBLE;
+-- DELETE FROM client;
+-- DELETE FROM employee;
+-- DELETE FROM country;
+
+-- SELECT client.id,
+--     firstName,
+--     surName,
+--     countryName AS country,
+--     firsContactDate,
+--     type AS emailType,
+--     sold,
+--     employee.id AS employeeId,
+--     employeeFirstName,
+--     employeeSurName
+-- FROM client,
+--     country,
+--     emails,
+--     employee
+-- WHERE client.countryId = country.id
+--     AND client.employeeId = employee.id
+--     AND emails.clientId = client.id
+-- ORDER BY client.firstName,
+--     client.surName;
+
+-- INSERT INTO client (
+--         firstName,
+--         surName,
+--         email,
+--         firsContactDate,
+--         sold,
+--         countryId,
+--         employeeId
+--     )
+-- VALUES(
+--         "Rami",
+--         "Naser Al-Din",
+--         "rami@naser.com",
+--         1610376080237,
+--         0,
+--         2974,
+--         2407
+--     );
+
+-- DELETE from sales WHERE id > 459;
+-- DELETE from emails WHERE id > 759;
+-- DELETE from client WHERE id > 3050;
+
+-- ALTER TABLE client
+-- ADD lastUpdated DOUBLE;
+--    SELECT client.id,firstName,surName,
+--                   countryName AS country,firsContactDate,
+--                   email,type AS emailType,sold,
+--                   employee.id AS employeeId,
+--                   employeeFirstName,employeeSurName
+--               FROM client , country, emails, employee
+--               WHERE
+--                   client.countryId = country.id AND
+--                   client.employeeId = employee.id AND
+--                   emails.clientId = client.id AND
+--                   client.id = 2868
+--               ORDER BY client.firstName, client.surName;
+
+-- SELECT sales.id,
+--     firstName,surName, 
+--     client.id AS clientId,
+--     countryName AS country,
+--     employee.id AS employeeId,
+--     employeeFirstName,employeeSurName, sales.date As saleDate
+-- FROM sales,client,country,employee
+-- WHERE
+--     sales.clientId = client.id
+--     AND sales.employeeId = employee.id
+--     AND client.countryId = country.id
+-- ORDER By sales.date DESC;
+DELETE from sales WHERE id >478;
